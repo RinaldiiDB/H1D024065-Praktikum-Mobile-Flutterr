@@ -2,4 +2,4 @@
 
 ## Pertemuan 2 Flutter
 
-<img src="assets/screenshots/img.png" width="300" alt="List Data Produk" />
+<img src="assets/screenshots/image.png" width="300" alt="List Data Produk" />
