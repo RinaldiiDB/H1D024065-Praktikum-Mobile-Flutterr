@@ -1,0 +1,31 @@
+-- Buat Database
+CREATE DATABASE IF NOT EXISTS toko_api;
+USE toko_api;
+
+-- 1. Tabel member
+CREATE TABLE IF NOT EXISTS member (
+  id INT NOT NULL AUTO_INCREMENT,
+  nama VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 2. Tabel member_token
+CREATE TABLE IF NOT EXISTS member_token (
+  id INT NOT NULL AUTO_INCREMENT,
+  member_id INT NOT NULL,
+  auth_key VARCHAR(255) NOT NULL,
+  PRIMARY KEY(id),
+  FOREIGN KEY (member_id) REFERENCES member(id) ON UPDATE CASCADE ON DELETE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 3. Tabel produk
+CREATE TABLE IF NOT EXISTS produk (
+  id INT NOT NULL AUTO_INCREMENT,
+  kode_produk VARCHAR(255) NOT NULL,
+  nama_produk VARCHAR(255) NOT NULL,
+  harga INT NOT NULL,
+  PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
